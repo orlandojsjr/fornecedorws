@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>vraptor-blank-project</display-name>
+    <!--
+		VRaptor will scan classpath for all @Component and 
+		@Resource inside WEB-INF/classes
+
+            If you want to load them also from WEB-INF/lib/ jars, 
+            you need to specify from which packages they will
+            be loaded, comma separated:
+    -->
+    <!-- 
+       <context-param>
+               <param-name>br.com.caelum.vraptor.packages</param-name>
+               <param-value>br.com.caelum.vraptor.blank</param-value>
+   </context-param>
+    -->
+    <!--  
+       if you are using a servlet 3.0 container 
+            as glassfish 3 or jetty 8, you dont need this
+            filter configuration 
+    -->
+    <!-- <context-param>
+                <param-name>br.com.caelum.vraptor.provider</param-name>
+                <param-value>br.com.caelum.vraptor.ioc.guice.GuiceProvider</param-value>
+    </context-param>-->
+    <welcome-file-list>
+        <welcome-file>forward.jsp</welcome-file>
+    </welcome-file-list>
+    <jsp-config>
+        <jsp-property-group>  
+            <url-pattern>/WEB-INF/jsp/index/*</url-pattern>      
+            <include-prelude>/cabecalho.jspf</include-prelude>
+            <include-coda>/rodape.jspf</include-coda>
+        </jsp-property-group>    
+    </jsp-config>
+    <filter>
+        <filter-name>vraptor</filter-name>
+        <filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>vraptor</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <listener>
+        <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>PedidoWS</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PedidoWS</servlet-name>
+        <url-pattern>/PedidoWS</url-pattern>
+    </servlet-mapping>
+    
+</web-app>

@@ -1,0 +1,34 @@
+<%-- any content can be specified here e.g.: --%>
+<!--==============================footer=================================-->
+<div class="bottom_block">
+    <div class="container_12">
+        <div class="grid_10 prefix_1">
+            <div class="column"><a href="#">Informações Úteis</a><br><a href="#">Desenvolvedores</a></div>
+            <div class="column"><a href="#">Contato
+                </a><br><a href="#">Nossa Garantia</a></div>
+            <div class="column"><a href="#">FAQs
+                </a><br><a href="#"></a></div>
+            <div class="clear"></div>
+            <div class="socials">
+                <a href="#"><i class=" icon-facebook"></i></a>
+                <a href="#"><i  class="icon-twitter"></i></a>
+                <a href="#"><i class=" icon-google-plus "></i></a>
+                <a href="#"><i class=" icon-pinterest"></i></a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<footer>    
+    <div class="container_12">
+        <div class="grid_12">
+
+            <div class="copy">
+                OrganicFood  (C) 2013 | <a href="#">Privacy Policy</a> | Website Template  Designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
